@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?><process version="10.3.001">
+  <context>
+    <input/>
+    <output/>
+    <macros/>
+  </context>
+  <operator activated="true" class="process" compatibility="10.3.001" expanded="true" name="Process">
+    <parameter key="logverbosity" value="init"/>
+    <parameter key="random_seed" value="2001"/>
+    <parameter key="send_mail" value="never"/>
+    <parameter key="notification_email" value=""/>
+    <parameter key="process_duration_for_mail" value="30"/>
+    <parameter key="encoding" value="SYSTEM"/>
+    <process expanded="true">
+      <operator activated="true" class="retrieve" compatibility="10.3.001" expanded="true" height="68" name="Retrieve 專案_3" width="90" x="45" y="136">
+        <parameter key="repository_entry" value="//Local Repository/data/專案_3"/>
+      </operator>
+      <operator activated="true" class="time_series:arima_trainer" compatibility="10.3.001" expanded="true" height="103" name="ARIMA" width="90" x="179" y="187">
+        <parameter key="time_series_attribute" value="Carbon Emissions (tons)"/>
+        <parameter key="has_indices" value="true"/>
+        <parameter key="indices_attribute" value="Year"/>
+        <parameter key="sort_time_series" value="true"/>
+        <parameter key="p:_order_of_the_autoregressive_model" value="1"/>
+        <parameter key="d:_degree_of_differencing" value="0"/>
+        <parameter key="q:_order_of_the_moving-average_model" value="0"/>
+        <parameter key="estimate_constant" value="true"/>
+        <parameter key="main_criterion" value="aic"/>
+        <parameter key="error_handling" value="use default forecast model"/>
+      </operator>
+      <operator activated="true" class="time_series:apply_forecast" compatibility="10.3.001" expanded="true" height="82" name="Apply Forecast" width="90" x="313" y="187">
+        <parameter key="forecast_horizon" value="5"/>
+        <parameter key="add_original_time_series" value="true"/>
+        <parameter key="add_combined_time_series" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="10.3.001" expanded="true" height="68" name="Retrieve 專案_3 (2)" width="90" x="45" y="238">
+        <parameter key="repository_entry" value="../data/專案_3"/>
+      </operator>
+      <operator activated="true" class="time_series:arima_trainer" compatibility="10.3.001" expanded="true" height="103" name="ARIMA (2)" width="90" x="179" y="289">
+        <parameter key="time_series_attribute" value="Fashion &amp; Leather Goods"/>
+        <parameter key="has_indices" value="true"/>
+        <parameter key="indices_attribute" value="Year"/>
+        <parameter key="sort_time_series" value="true"/>
+        <parameter key="p:_order_of_the_autoregressive_model" value="1"/>
+        <parameter key="d:_degree_of_differencing" value="0"/>
+        <parameter key="q:_order_of_the_moving-average_model" value="0"/>
+        <parameter key="estimate_constant" value="true"/>
+        <parameter key="main_criterion" value="aic"/>
+        <parameter key="error_handling" value="use default forecast model"/>
+      </operator>
+      <operator activated="true" class="time_series:apply_forecast" compatibility="10.3.001" expanded="true" height="82" name="Apply Forecast (2)" width="90" x="313" y="289">
+        <parameter key="forecast_horizon" value="5"/>
+        <parameter key="add_original_time_series" value="true"/>
+        <parameter key="add_combined_time_series" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="10.3.001" expanded="true" height="68" name="Retrieve 專案_3 (3)" width="90" x="45" y="340">
+        <parameter key="repository_entry" value="../data/專案_3"/>
+      </operator>
+      <operator activated="true" class="time_series:arima_trainer" compatibility="10.3.001" expanded="true" height="103" name="ARIMA (3)" width="90" x="179" y="391">
+        <parameter key="time_series_attribute" value="Other Activities"/>
+        <parameter key="has_indices" value="true"/>
+        <parameter key="indices_attribute" value="Year"/>
+        <parameter key="sort_time_series" value="true"/>
+        <parameter key="p:_order_of_the_autoregressive_model" value="1"/>
+        <parameter key="d:_degree_of_differencing" value="0"/>
+        <parameter key="q:_order_of_the_moving-average_model" value="0"/>
+        <parameter key="estimate_constant" value="true"/>
+        <parameter key="main_criterion" value="aic"/>
+        <parameter key="error_handling" value="use default forecast model"/>
+      </operator>
+      <operator activated="true" class="time_series:apply_forecast" compatibility="10.3.001" expanded="true" height="82" name="Apply Forecast (3)" width="90" x="313" y="391">
+        <parameter key="forecast_horizon" value="5"/>
+        <parameter key="add_original_time_series" value="true"/>
+        <parameter key="add_combined_time_series" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="10.3.001" expanded="true" height="68" name="Retrieve 專案_3 (4)" width="90" x="45" y="442">
+        <parameter key="repository_entry" value="../data/專案_3"/>
+      </operator>
+      <operator activated="true" class="time_series:arima_trainer" compatibility="10.3.001" expanded="true" height="103" name="ARIMA (4)" width="90" x="179" y="493">
+        <parameter key="time_series_attribute" value="Perfumes &amp; Cosmetics"/>
+        <parameter key="has_indices" value="true"/>
+        <parameter key="indices_attribute" value="Year"/>
+        <parameter key="sort_time_series" value="true"/>
+        <parameter key="p:_order_of_the_autoregressive_model" value="1"/>
+        <parameter key="d:_degree_of_differencing" value="0"/>
+        <parameter key="q:_order_of_the_moving-average_model" value="0"/>
+        <parameter key="estimate_constant" value="true"/>
+        <parameter key="main_criterion" value="aic"/>
+        <parameter key="error_handling" value="use default forecast model"/>
+      </operator>
+      <operator activated="true" class="time_series:apply_forecast" compatibility="10.3.001" expanded="true" height="82" name="Apply Forecast (4)" width="90" x="313" y="493">
+        <parameter key="forecast_horizon" value="5"/>
+        <parameter key="add_original_time_series" value="true"/>
+        <parameter key="add_combined_time_series" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="10.3.001" expanded="true" height="68" name="Retrieve 專案_3 (5)" width="90" x="45" y="544">
+        <parameter key="repository_entry" value="../data/專案_3"/>
+      </operator>
+      <operator activated="true" class="time_series:arima_trainer" compatibility="10.3.001" expanded="true" height="103" name="ARIMA (5)" width="90" x="179" y="595">
+        <parameter key="time_series_attribute" value="Selective Retailing"/>
+        <parameter key="has_indices" value="true"/>
+        <parameter key="indices_attribute" value="Year"/>
+        <parameter key="sort_time_series" value="true"/>
+        <parameter key="p:_order_of_the_autoregressive_model" value="1"/>
+        <parameter key="d:_degree_of_differencing" value="0"/>
+        <parameter key="q:_order_of_the_moving-average_model" value="0"/>
+        <parameter key="estimate_constant" value="true"/>
+        <parameter key="main_criterion" value="aic"/>
+        <parameter key="error_handling" value="use default forecast model"/>
+      </operator>
+      <operator activated="true" class="time_series:apply_forecast" compatibility="10.3.001" expanded="true" height="82" name="Apply Forecast (5)" width="90" x="313" y="595">
+        <parameter key="forecast_horizon" value="5"/>
+        <parameter key="add_original_time_series" value="true"/>
+        <parameter key="add_combined_time_series" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="10.3.001" expanded="true" height="68" name="Retrieve 專案_3 (6)" width="90" x="45" y="646">
+        <parameter key="repository_entry" value="../data/專案_3"/>
+      </operator>
+      <operator activated="true" class="time_series:arima_trainer" compatibility="10.3.001" expanded="true" height="103" name="ARIMA (6)" width="90" x="179" y="697">
+        <parameter key="time_series_attribute" value="Watches &amp; Jewelry"/>
+        <parameter key="has_indices" value="true"/>
+        <parameter key="indices_attribute" value="Year"/>
+        <parameter key="sort_time_series" value="true"/>
+        <parameter key="p:_order_of_the_autoregressive_model" value="1"/>
+        <parameter key="d:_degree_of_differencing" value="0"/>
+        <parameter key="q:_order_of_the_moving-average_model" value="0"/>
+        <parameter key="estimate_constant" value="true"/>
+        <parameter key="main_criterion" value="aic"/>
+        <parameter key="error_handling" value="use default forecast model"/>
+      </operator>
+      <operator activated="true" class="time_series:apply_forecast" compatibility="10.3.001" expanded="true" height="82" name="Apply Forecast (6)" width="90" x="313" y="697">
+        <parameter key="forecast_horizon" value="5"/>
+        <parameter key="add_original_time_series" value="true"/>
+        <parameter key="add_combined_time_series" value="true"/>
+      </operator>
+      <operator activated="true" class="retrieve" compatibility="10.3.001" expanded="true" height="68" name="Retrieve 專案_3 (7)" width="90" x="45" y="748">
+        <parameter key="repository_entry" value="../data/專案_3"/>
+      </operator>
+      <operator activated="true" class="time_series:arima_trainer" compatibility="10.3.001" expanded="true" height="103" name="ARIMA (7)" width="90" x="179" y="799">
+        <parameter key="time_series_attribute" value="Wines &amp; Spirits"/>
+        <parameter key="has_indices" value="true"/>
+        <parameter key="indices_attribute" value="Year"/>
+        <parameter key="sort_time_series" value="true"/>
+        <parameter key="p:_order_of_the_autoregressive_model" value="1"/>
+        <parameter key="d:_degree_of_differencing" value="0"/>
+        <parameter key="q:_order_of_the_moving-average_model" value="0"/>
+        <parameter key="estimate_constant" value="true"/>
+        <parameter key="main_criterion" value="aic"/>
+        <parameter key="error_handling" value="use default forecast model"/>
+      </operator>
+      <operator activated="true" class="time_series:apply_forecast" compatibility="10.3.001" expanded="true" height="82" name="Apply Forecast (7)" width="90" x="313" y="799">
+        <parameter key="forecast_horizon" value="5"/>
+        <parameter key="add_original_time_series" value="true"/>
+        <parameter key="add_combined_time_series" value="true"/>
+      </operator>
+      <connect from_op="Retrieve 專案_3" from_port="output" to_op="ARIMA" to_port="example set"/>
+      <connect from_op="ARIMA" from_port="forecast model" to_op="Apply Forecast" to_port="forecast model"/>
+      <connect from_op="Apply Forecast" from_port="example set" to_port="result 1"/>
+      <connect from_op="Retrieve 專案_3 (2)" from_port="output" to_op="ARIMA (2)" to_port="example set"/>
+      <connect from_op="ARIMA (2)" from_port="forecast model" to_op="Apply Forecast (2)" to_port="forecast model"/>
+      <connect from_op="Apply Forecast (2)" from_port="example set" to_port="result 2"/>
+      <connect from_op="Retrieve 專案_3 (3)" from_port="output" to_op="ARIMA (3)" to_port="example set"/>
+      <connect from_op="ARIMA (3)" from_port="forecast model" to_op="Apply Forecast (3)" to_port="forecast model"/>
+      <connect from_op="Apply Forecast (3)" from_port="example set" to_port="result 3"/>
+      <connect from_op="Retrieve 專案_3 (4)" from_port="output" to_op="ARIMA (4)" to_port="example set"/>
+      <connect from_op="ARIMA (4)" from_port="forecast model" to_op="Apply Forecast (4)" to_port="forecast model"/>
+      <connect from_op="Apply Forecast (4)" from_port="example set" to_port="result 4"/>
+      <connect from_op="Retrieve 專案_3 (5)" from_port="output" to_op="ARIMA (5)" to_port="example set"/>
+      <connect from_op="ARIMA (5)" from_port="forecast model" to_op="Apply Forecast (5)" to_port="forecast model"/>
+      <connect from_op="Apply Forecast (5)" from_port="example set" to_port="result 5"/>
+      <connect from_op="Retrieve 專案_3 (6)" from_port="output" to_op="ARIMA (6)" to_port="example set"/>
+      <connect from_op="ARIMA (6)" from_port="forecast model" to_op="Apply Forecast (6)" to_port="forecast model"/>
+      <connect from_op="Apply Forecast (6)" from_port="example set" to_port="result 6"/>
+      <connect from_op="Retrieve 專案_3 (7)" from_port="output" to_op="ARIMA (7)" to_port="example set"/>
+      <connect from_op="ARIMA (7)" from_port="forecast model" to_op="Apply Forecast (7)" to_port="forecast model"/>
+      <connect from_op="Apply Forecast (7)" from_port="example set" to_port="result 7"/>
+      <portSpacing port="source_input 1" spacing="0"/>
+      <portSpacing port="sink_result 1" spacing="0"/>
+      <portSpacing port="sink_result 2" spacing="0"/>
+      <portSpacing port="sink_result 3" spacing="0"/>
+      <portSpacing port="sink_result 4" spacing="0"/>
+      <portSpacing port="sink_result 5" spacing="0"/>
+      <portSpacing port="sink_result 6" spacing="0"/>
+      <portSpacing port="sink_result 7" spacing="0"/>
+      <portSpacing port="sink_result 8" spacing="0"/>
+    </process>
+  </operator>
+</process>
